@@ -16,7 +16,7 @@ export class NodemailerMailAdapter implements MailAdapter {
   async sendMail({ subject, body }: SendMailData) {
     await transporter.sendMail({
       from: "Equipe Feedget <oi@feedget.com>",
-      to: `Wanderson Santos <${process.env.NODEMAILER_PASSWORD}>`,
+      to: `Wanderson Santos <${process.env.NODEMAILER_EMAIL}>`,
       subject,
       html: body,
     });
