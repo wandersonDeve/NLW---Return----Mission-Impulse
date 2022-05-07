@@ -2,13 +2,13 @@ import { MailAdapter, SendMailData } from "../mail-adapter";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
-  port: process.env.MAIL_PORT,
-  secure: process.env.MAIL_PORT == 465,
+  host: process.env.NODEMAILER_HOST,
+  port: Number(process.env.NODEMAILER_PORT),
+  secure: Number(process.env.NODEMAILER_PORT) == 465,
   // true for 465, false for other ports
   auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
+    user: process.env.NODEMAILER_USER,
+    pass: process.env.NODEMAILER_PASSWORD,
   },
 });
 
